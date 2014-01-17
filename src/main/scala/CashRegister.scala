@@ -1,6 +1,6 @@
 import collection.mutable.ListBuffer
 
-/** A Product is a good sold. */
+/** A Product is a good on the market. */
 case class Product(
   name:     String,
   cents:    Int,
