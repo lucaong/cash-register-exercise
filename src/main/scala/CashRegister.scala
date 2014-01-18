@@ -46,11 +46,9 @@ case class ReceiptItem(
   * to calculates totals. */
 class Receipt( items: List[ReceiptItem] = Nil ) {
   lazy val totalTaxCents = items.foldLeft(0)( _ + _.taxCents )
-
   lazy val subtotalCents = items.foldLeft(0)( _ + _.cents )
 
   def totalTax = totalTaxCents / 100.0
-
   def total    = ( totalTaxCents + subtotalCents ) / 100.0
 
   def +( it: ReceiptItem ) = new Receipt( it :: items )
